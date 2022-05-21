@@ -6,6 +6,7 @@ import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import './components/SignIn/SignIn.css';
 import Chatroom from './components/Chatroom/Chatroom';
 import SignIn from './components/SignIn/SignIn';
+import SignOut from './components/SignOut/SignOut';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB5TIKYS0o_XURgZf8ot_BgQ8SPtBNTE9A',
@@ -32,7 +33,10 @@ function App() {
   const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <header className="App-header" />
+      <header className="App-header">
+        <h1>Chatpack</h1>
+        <SignOut auth={auth} />
+      </header>
       <section>{user ? <Chatroom auth={auth} firestore={firestore} /> : <SignIn />}</section>
     </div>
   );

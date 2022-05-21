@@ -1,11 +1,11 @@
-import { getAuth, signOut } from 'firebase/auth';
 import React from 'react';
 import './SignOut.css';
 
-function SignOut() {
+function SignOut(props) {
+  const { auth } = props;
   return (
-    getAuth.currentUser && (
-      <button className="signoutBtn" onClick={() => signOut(getAuth())} type="button">
+    auth.currentUser && (
+      <button className="signoutBtn" onClick={() => auth.signOut()} type="button">
         {' '}
         Sign Out
       </button>
