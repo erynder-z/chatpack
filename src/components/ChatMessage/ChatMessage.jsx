@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './ChatMessage.css';
+import placeholder from '../../assets/placeholder.png';
 
 function ChatMessage(props) {
   const { message, auth } = props;
@@ -8,7 +10,11 @@ function ChatMessage(props) {
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} alt={photoURL} />
+      {!photoURL ? (
+        <img src={placeholder} alt={placeholder} />
+      ) : (
+        <img src={photoURL} alt={photoURL} />
+      )}
       <p>{text}</p>
     </div>
   );
