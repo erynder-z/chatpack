@@ -2,6 +2,7 @@
 import { addDoc, collection, orderBy, query, limit, serverTimestamp } from 'firebase/firestore';
 import React, { useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { MdSend } from 'react-icons/md';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import './Chatroom.css';
 
@@ -42,12 +43,15 @@ function Chatroom(props) {
       <form action="input" onSubmit={sendMessage}>
         <input
           type="text"
+          placeholder="enter message"
           value={formValue}
           onChange={(e) => {
             setFormValue(e.target.value);
           }}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">
+          <MdSend />
+        </button>
       </form>
     </>
   );

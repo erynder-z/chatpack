@@ -33,7 +33,7 @@ function App() {
   const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <h1>Chatpack</h1>
         <SignOut auth={auth} />
       </header>

@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { FiLogOut } from 'react-icons/fi';
 import './SignOut.css';
 
 function SignOut(props) {
@@ -7,7 +9,7 @@ function SignOut(props) {
     auth.currentUser && (
       <button className="signoutBtn" onClick={() => auth.signOut()} type="button">
         {' '}
-        Sign Out
+        <FiLogOut />
       </button>
     )
   );
