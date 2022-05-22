@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { addDoc, collection, orderBy, query, limit, serverTimestamp } from 'firebase/firestore';
 import React, { useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -15,13 +16,15 @@ function Chatroom(props) {
 
   const sendMessage = async (e) => {
     e.preventDefault();
-    const { uid, photoURL } = auth.currentUser;
-    /* const docRef = */ await addDoc(collection(firestore, 'messages'), {
-      text: formValue,
-      createdAt: serverTimestamp(),
-      uid,
-      photoURL
-    });
+    if (formValue !== '') {
+      const { uid, photoURL } = auth.currentUser;
+      /* const docRef = */ await addDoc(collection(firestore, 'messages'), {
+        text: formValue,
+        createdAt: serverTimestamp(),
+        uid,
+        photoURL
+      });
+    }
 
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
