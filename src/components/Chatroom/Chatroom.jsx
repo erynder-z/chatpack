@@ -1,4 +1,4 @@
-import { collection, orderBy, query, limit, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, orderBy, query, limit, serverTimestamp } from 'firebase/firestore';
 import React, { useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from '../ChatMessage/ChatMessage';
@@ -16,7 +16,7 @@ function Chatroom(props) {
   const sendMessage = async (e) => {
     e.preventDefault();
     const { uid, photoURL } = auth.currentUser;
-    await messagesRef.add({
+    /* const docRef = */ await addDoc(collection(firestore, 'messages'), {
       text: formValue,
       createdAt: serverTimestamp(),
       uid,
