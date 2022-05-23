@@ -1,8 +1,8 @@
 import './App.css';
 import { initializeApp } from 'firebase/app';
-import { getAuth, connectAuthEmulator } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import './components/SignIn/SignIn.css';
 import Chatroom from './components/Chatroom/Chatroom';
 import SignIn from './components/SignIn/SignIn';
