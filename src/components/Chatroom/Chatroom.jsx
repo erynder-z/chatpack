@@ -6,8 +6,7 @@ import { MdSend } from 'react-icons/md';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import './Chatroom.css';
 
-function Chatroom(props) {
-  const { auth, firestore } = props;
+function Chatroom({ auth, firestore }) {
   const dummy = useRef();
   const messagesRef = collection(firestore, 'messages');
   const q = query(messagesRef, orderBy('createdAt'), limit(25));
