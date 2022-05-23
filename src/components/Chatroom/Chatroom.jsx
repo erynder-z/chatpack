@@ -18,6 +18,7 @@ function Chatroom({ auth, firestore }) {
     e.preventDefault();
     if (formValue !== '') {
       const { uid, photoURL } = auth.currentUser;
+
       /* const docRef =  */ await addDoc(collection(firestore, 'messages'), {
         text: formValue,
         timestamp: serverTimestamp(),
@@ -33,7 +34,10 @@ function Chatroom({ auth, firestore }) {
   return (
     <div className="chatroom">
       <div className="messages">
-        {messages && messages.map((msg) => <ChatMessage key={msg.id} message={msg} auth={auth} />)}
+        {messages &&
+          messages.map((msg) => (
+            <ChatMessage key={messages.indexOf(msg).toString()} message={msg} auth={auth} />
+          ))}
         <span ref={dummy} />
       </div>
 
