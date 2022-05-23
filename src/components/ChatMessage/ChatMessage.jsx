@@ -4,11 +4,10 @@ import { fromUnixTime, format } from 'date-fns';
 import './ChatMessage.css';
 import placeholder from '../../assets/placeholder.png';
 
-function ChatMessage({ message, auth }) {
-  const { text, uid, photoURL, createdAt } = message;
-  const messageClass = uid === auth.currentUser.id ? 'sent' : 'received';
+function ChatMessage({ auth, message }) {
+  const { text, uid, photoURL, timestamp } = message;
 
-  const formattedDate = format(fromUnixTime(createdAt.seconds), 'dd LLL yyy @ k:m');
+  const messageClass = uid === auth.currentUser.id ? 'sent' : 'received';
 
   return (
     <div className={`message ${messageClass}`}>
@@ -18,7 +17,12 @@ function ChatMessage({ message, auth }) {
         <img src={photoURL} alt={photoURL} />
       )}
       <div className="msg-container">
-        <h5>Sent: {formattedDate} </h5>
+        <h5>
+          Sent:{' '}
+          {timestamp === null
+            ? format(fromUnixTime(Date.now()), 'dd LLL yyy @ k:m')
+            : format(fromUnixTime(timestamp.seconds), 'dd LLL yyy @ k:m')}{' '}
+        </h5>
         <p>{text}</p>
       </div>
     </div>
