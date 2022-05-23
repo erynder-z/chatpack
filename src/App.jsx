@@ -26,8 +26,8 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const auth = getAuth(app);
 
-connectAuthEmulator(auth, 'http://localhost:9099');
-connectFirestoreEmulator(firestore, 'localhost', 8080);
+/* connectAuthEmulator(auth, 'http://localhost:9099');
+connectFirestoreEmulator(firestore, 'localhost', 8080); */
 
 function App() {
   const [user] = useAuthState(auth);
