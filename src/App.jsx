@@ -4,6 +4,7 @@ import { getAuth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { getFirestore } from 'firebase/firestore';
 import './components/SignIn/SignIn.css';
+import { useEffect } from 'react';
 import Chatroom from './components/Chatroom/Chatroom';
 import SignIn from './components/SignIn/SignIn';
 import Nav from './components/Nav/Nav';
@@ -31,6 +32,12 @@ connectFirestoreEmulator(firestore, 'localhost', 8080); */
 
 function App() {
   const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    const viewport = document.querySelector('meta[name=viewport]');
+    viewport.setAttribute('content', `${viewport.content}, height=${window.innerHeight}`);
+  }, []);
+
   return (
     <div className="App">
       <header>
