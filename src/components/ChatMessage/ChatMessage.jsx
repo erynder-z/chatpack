@@ -6,7 +6,7 @@ import placeholder from '../../assets/placeholder.png';
 
 function ChatMessage({ auth, message }) {
   const { text, uid, photoURL, timestamp } = message;
-  const messageClass = uid === auth.currentUser.id ? 'sent' : 'received';
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (
     <div className={`message ${messageClass}`}>
@@ -19,8 +19,8 @@ function ChatMessage({ auth, message }) {
         <h5>
           Sent:{' '}
           {timestamp === null
-            ? format(fromUnixTime(Date.now()), 'dd LLL yyy @ k:m')
-            : format(fromUnixTime(timestamp.seconds), 'dd LLL yyy @ k:m')}{' '}
+            ? format(fromUnixTime(Date.now()), 'dd LLL yyy @ k:mm')
+            : format(fromUnixTime(timestamp.seconds), 'dd LLL yyy @ k:mm')}{' '}
         </h5>
         <p>{text}</p>
       </div>
