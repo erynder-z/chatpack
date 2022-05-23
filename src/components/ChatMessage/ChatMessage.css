@@ -1,0 +1,67 @@
+ul,
+li {
+  text-align: left;
+  list-style: none;
+}
+
+h5 {
+  margin: 0;
+}
+
+p {
+  max-width: 75%;
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  position: relative;
+  color: whitesmoke;
+  text-align: justify;
+  height: auto;
+  word-wrap: break-word;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.msg-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent h5 {
+  align-self: flex-end;
+  color: whitesmoke;
+}
+
+.sent p {
+  color: whitesmoke;
+  background: var(--message-back-send);
+  align-self: flex-end;
+}
+
+.received h5 {
+  color: whitesmoke;
+}
+
+.received p {
+  background: var(--message-back-received);
+  color: black;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+  padding-right: 0.5rem;
+}

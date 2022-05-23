@@ -6,7 +6,6 @@ import placeholder from '../../assets/placeholder.png';
 
 function ChatMessage({ auth, message }) {
   const { text, uid, photoURL, timestamp } = message;
-
   const messageClass = uid === auth.currentUser.id ? 'sent' : 'received';
 
   return (

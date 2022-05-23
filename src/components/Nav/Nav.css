@@ -1,0 +1,44 @@
+.navbar {
+  background-color: var(--header);
+  height: 10vh;
+  max-width: 50vw;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.navbar-up {
+  width: 100%;
+}
+
+.navbar > h1 {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.navbar > h1 svg {
+  padding-left: 1rem;
+}
+
+@media all and (max-width: 768px) {
+  .navbar {
+    max-width: 100%;
+  }
+
+  .navbar > h1 {
+    font-size: 1.5rem;
+    padding: 0;
+    max-width: 33vw;
+  }
+
+  .navbar > h1 svg {
+    padding-left: 0.5rem;
+  }
+}

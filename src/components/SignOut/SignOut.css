@@ -1,0 +1,27 @@
+.signoutBtn {
+  height: 4rem;
+  width: 4rem;
+  padding: 1rem;
+  background-color: var(--logout);
+  border: none;
+  border-radius: 50%;
+  color: whitesmoke;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.signoutBtn:hover {
+  background-color: var(--logout-brighter);
+}
+
+@media all and (max-width: 768px) {
+  .signoutBtn {
+    width: 3rem;
+    max-width: 33vw;
+    height: 3rem;
+  }
+}

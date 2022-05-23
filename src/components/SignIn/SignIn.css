@@ -1,3 +1,30 @@
 .signinBtn {
-  height: 10vh;
+  margin: auto;
+  height: 5rem;
+  width: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--signin);
+  color: black;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.signinBtn:hover {
+  background-color: var(--signin-hover);
+}
+.signin-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.divider {
+  height: 100%;
+  border: solid 1px var(--header);
 }

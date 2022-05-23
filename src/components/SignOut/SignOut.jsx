@@ -8,7 +8,7 @@ function SignOut({ auth }) {
     auth.currentUser && (
       <button className="signoutBtn" onClick={() => auth.signOut()} type="button">
         {' '}
-        <FiLogOut />
+        <FiLogOut size="1.5rem" />
       </button>
     )
   );

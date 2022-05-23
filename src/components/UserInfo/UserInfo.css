@@ -1,0 +1,12 @@
+.userinfo {
+  padding: 0 1rem;
+  height: auto;
+  word-wrap: break-word;
+}
+
+@media all and (max-width: 768px) {
+  .userinfo {
+    padding: 0;
+    font-size: 1rem;
+  }
+}

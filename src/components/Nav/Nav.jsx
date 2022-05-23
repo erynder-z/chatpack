@@ -2,6 +2,7 @@
 import './Nav.css';
 import { BsChatDots } from 'react-icons/bs';
 import SignOut from '../SignOut/SignOut';
+import UserInfo from '../UserInfo/UserInfo';
 
 function Nav({ auth }) {
   return (
@@ -9,6 +10,7 @@ function Nav({ auth }) {
       <h1>
         Chatpack <BsChatDots />
       </h1>
+      <UserInfo auth={auth} />
       <SignOut auth={auth} />
     </div>
   );
