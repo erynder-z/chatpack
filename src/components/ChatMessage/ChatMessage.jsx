@@ -4,8 +4,7 @@ import { fromUnixTime, format } from 'date-fns';
 import './ChatMessage.css';
 import placeholder from '../../assets/placeholder.png';
 
-function ChatMessage(props) {
-  const { message, auth } = props;
+function ChatMessage({ message, auth }) {
   const { text, uid, photoURL, createdAt } = message;
   const messageClass = uid === auth.currentUser.id ? 'sent' : 'received';
 
