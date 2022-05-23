@@ -1,7 +1,7 @@
 .navbar {
   background-color: var(--header);
   height: 10vh;
-  max-width: 50vw;
+  max-width: 45vw;
   color: white;
   position: fixed;
   width: 100%;
