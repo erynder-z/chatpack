@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { addDoc, collection, orderBy, query, limit, serverTimestamp } from 'firebase/firestore';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { MdSend } from 'react-icons/md';
 import ChatMessage from '../ChatMessage/ChatMessage';
@@ -30,6 +30,12 @@ function Chatroom({ auth, firestore }) {
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // avoid smartphone keybaords from changing the viewport
+  useEffect(() => {
+    const viewport = document.querySelector('meta[name=viewport]');
+    viewport.setAttribute('content', `${viewport.content}, height=${window.innerHeight}`);
+  }, []);
 
   return (
     <div className="chatroom">
