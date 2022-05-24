@@ -4,14 +4,14 @@ import { BsChatDots } from 'react-icons/bs';
 import SignOut from '../SignOut/SignOut';
 import UserInfo from '../UserInfo/UserInfo';
 
-function Nav({ auth }) {
+function Nav({ auth, firestore }) {
   return (
     <div className="navbar">
       <h1>
         Chatpack <BsChatDots />
       </h1>
       <UserInfo auth={auth} />
-      <SignOut auth={auth} />
+      <SignOut auth={auth} firestore={firestore} />
     </div>
   );
 }
