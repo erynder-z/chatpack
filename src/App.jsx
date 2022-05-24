@@ -51,7 +51,7 @@ function App() {
     <div className="App">
       <header>
         <Nav auth={auth} firestore={firestore} />
-        <OnlineUsers />
+        <OnlineUsers auth={auth} firestore={firestore} />
       </header>
       <section>{user ? <Chatroom auth={auth} firestore={firestore} /> : <SignIn />}</section>
     </div>

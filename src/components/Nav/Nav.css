@@ -1,7 +1,7 @@
 .navbar {
   background-color: var(--header);
   height: 10vh;
-  max-width: 45vw;
+  max-width: 40vw;
   color: white;
   position: fixed;
   width: 100%;
@@ -21,6 +21,7 @@
 .navbar > h1 {
   display: flex;
   padding: 0 1rem;
+  /*   z-index: 99; */
 }
 
 .navbar > h1 svg {

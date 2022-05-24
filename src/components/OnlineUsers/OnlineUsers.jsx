@@ -19,6 +19,7 @@ function OnlineUsers({ firestore }) {
   return (
     <div className={`online-users ${showOnline ? 'active' : ''}`}>
       <div className="usr-container">
+        <h4>online users:</h4>
         {onlineUsers &&
           showOnline &&
           onlineUsers.map((usr) => {
@@ -30,7 +31,7 @@ function OnlineUsers({ firestore }) {
           })}
       </div>
       <button className="online-users-toggle" onClick={toggle} type="button">
-        <BsThreeDotsVertical size="1rem" />
+        <BsThreeDotsVertical size="1rem" color="whitesmoke" />
       </button>
     </div>
   );

@@ -17,7 +17,7 @@
 
 .App {
   text-align: center;
-  max-width: 45%;
+  max-width: 40%;
   margin: 0 auto;
 }
 
@@ -30,7 +30,7 @@
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
-  width: 45vw;
+  width: 40vw;
   background-color: var(--background);
 }
 

@@ -1,0 +1,105 @@
+.online-users {
+  background-color: var(--header);
+  height: fit-content;
+  min-height: 12vh;
+  max-width: 40vw;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 98;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.online-users.active {
+  transform: translateY(10vh);
+}
+
+.online-users.active li {
+  animation: fadeIn ease 0.5s;
+  -webkit-animation: fadeIn ease 0.5s;
+  -moz-animation: fadeIn ease 0.5s;
+  -o-animation: fadeIn ease 0.5s;
+  -ms-animation: fadeIn ease 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.usr-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.usr-container > h4 {
+  margin-top: 0;
+  border-bottom: solid 1px whitesmoke;
+}
+
+.usr-container > li {
+  padding: 0.5rem;
+}
+
+.online-users button {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: var(--header);
+}
+
+@media all and (max-width: 768px) {
+  .online-users {
+    max-width: 100%;
+  }
+}

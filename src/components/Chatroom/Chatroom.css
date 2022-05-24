@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
-  width: 45vw;
+  width: 40vw;
   background-color: var(--background);
 }
 
@@ -12,7 +12,7 @@
   max-height: 85vh;
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 3rem 0;
   overflow-y: auto;
 }
 
@@ -30,7 +30,7 @@
 
 .chatroom form {
   height: 7vh;
-  width: 45vw;
+  width: 40vw;
   position: fixed;
   bottom: 0;
   background-color: rgb(24, 23, 23);

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import './Nav.css';
-import { BsChatDots } from 'react-icons/bs';
+import { BiRocket } from 'react-icons/bi';
 import SignOut from '../SignOut/SignOut';
 import UserInfo from '../UserInfo/UserInfo';
 
@@ -8,9 +8,9 @@ function Nav({ auth, firestore }) {
   return (
     <div className="navbar">
       <h1>
-        Chatpack <BsChatDots />
+        Chatpack <BiRocket />
       </h1>
-      <UserInfo auth={auth} />
+      <UserInfo auth={auth} firestore={firestore} />
       <SignOut auth={auth} firestore={firestore} />
     </div>
   );

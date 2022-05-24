@@ -2,6 +2,7 @@
   padding: 0 1rem;
   height: auto;
   word-wrap: break-word;
+  /* z-index: 99 */
 }
 
 @media all and (max-width: 768px) {
