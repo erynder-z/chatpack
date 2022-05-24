@@ -1,12 +1,13 @@
 import './App.css';
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { connectAuthEmulator, getAuth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { getFirestore } from 'firebase/firestore';
+import { connectFirestoreEmulator, doc, getFirestore, setDoc } from 'firebase/firestore';
 import './components/SignIn/SignIn.css';
 import Chatroom from './components/Chatroom/Chatroom';
 import SignIn from './components/SignIn/SignIn';
 import Nav from './components/Nav/Nav';
+import OnlineUsers from './components/OnlineUsers/OnlineUsers';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB5TIKYS0o_XURgZf8ot_BgQ8SPtBNTE9A',
@@ -26,16 +27,31 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const auth = getAuth(app);
 
-/* connectAuthEmulator(auth, 'http://localhost:9099');
-connectFirestoreEmulator(firestore, 'localhost', 8080); */
+connectAuthEmulator(auth, 'http://localhost:9099');
+connectFirestoreEmulator(firestore, 'localhost', 8080);
 
 function App() {
   const [user] = useAuthState(auth);
 
+  const userOnline = async () => {
+    const { uid } = auth.currentUser;
+    const name = auth.currentUser.email.split('@')[0];
+
+    await setDoc(doc(firestore, 'onlineUsers', uid), {
+      uid,
+      name
+    });
+  };
+
+  if (user) {
+    userOnline();
+  }
+
   return (
     <div className="App">
       <header>
-        <Nav auth={auth} />
+        <Nav auth={auth} firestore={firestore} />
+        <OnlineUsers />
       </header>
       <section>{user ? <Chatroom auth={auth} firestore={firestore} /> : <SignIn />}</section>
     </div>
