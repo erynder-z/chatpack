@@ -14,6 +14,10 @@ function Chatroom({ auth, firestore }) {
   const [messages] = useCollectionData(q, { idField: 'id' });
   const [formValue, setFormValue] = useState('');
 
+  const scrollToBottom = () => {
+    dummy.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const sendMessage = async (e) => {
     e.preventDefault();
     if (formValue !== '') {
@@ -28,7 +32,7 @@ function Chatroom({ auth, firestore }) {
     }
 
     setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+    scrollToBottom();
   };
 
   // avoid smartphone keybaords from changing the viewport
