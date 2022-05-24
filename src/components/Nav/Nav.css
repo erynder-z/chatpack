@@ -1,6 +1,6 @@
 .navbar {
   background-color: var(--header);
-  height: 10vh;
+  height: 13vh;
   max-width: 40vw;
   color: white;
   position: fixed;
@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 99;
-  padding: 10px;
+  padding: 1rem;
   box-sizing: border-box;
 }
 

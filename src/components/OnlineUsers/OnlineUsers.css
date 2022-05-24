@@ -1,7 +1,7 @@
 .online-users {
   background-color: var(--header);
   height: fit-content;
-  min-height: 12vh;
+  min-height: 16vh;
   max-width: 40vw;
   color: white;
   position: fixed;
