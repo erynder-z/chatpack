@@ -1,8 +1,8 @@
 import './App.css';
 import { initializeApp } from 'firebase/app';
-import { connectAuthEmulator, getAuth } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { connectFirestoreEmulator, doc, getFirestore, setDoc } from 'firebase/firestore';
+import { doc, getFirestore, setDoc } from 'firebase/firestore';
 import './components/SignIn/SignIn.css';
 import Chatroom from './components/Chatroom/Chatroom';
 import SignIn from './components/SignIn/SignIn';
@@ -27,8 +27,8 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const auth = getAuth(app);
 
-connectAuthEmulator(auth, 'http://localhost:9099');
-connectFirestoreEmulator(firestore, 'localhost', 8080);
+/* connectAuthEmulator(auth, 'http://localhost:9099');
+connectFirestoreEmulator(firestore, 'localhost', 8080); */
 
 function App() {
   const [user] = useAuthState(auth);
