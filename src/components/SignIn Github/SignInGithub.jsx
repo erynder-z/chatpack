@@ -13,7 +13,7 @@ function SignInGithub() {
   return (
     <button className="signinBtnGithub" onClick={signInWithGithub} type="button">
       <div className="signin-container">
-        <div className="signin-text">Sign in with Github</div>
+        <div className="signin-text">Sign in with GitHub</div>
         <div className="divider" />
         <AiOutlineGithub size="4rem" />
       </div>

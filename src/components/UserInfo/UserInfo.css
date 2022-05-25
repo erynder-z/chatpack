@@ -1,8 +1,9 @@
 .userinfo {
   padding: 0 1rem;
   height: auto;
+  max-width: 33%;
   word-wrap: break-word;
-  /* z-index: 99 */
+  margin: auto;
 }
 
 @media all and (max-width: 768px) {
