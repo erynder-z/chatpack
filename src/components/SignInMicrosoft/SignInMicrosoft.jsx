@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
 import { BsMicrosoft } from 'react-icons/bs';
