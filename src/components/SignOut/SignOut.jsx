@@ -6,8 +6,8 @@ import './SignOut.css';
 
 function SignOut({ auth, firestore }) {
   const userSignOut = async () => {
-    await deleteDoc(doc(firestore, 'onlineUsers', auth.currentUser.uid));
     auth.signOut();
+    await deleteDoc(doc(firestore, 'onlineUsers', auth.currentUser.uid));
   };
   return (
     auth.currentUser && (
