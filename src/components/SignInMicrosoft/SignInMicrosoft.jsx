@@ -9,7 +9,7 @@ function SignInMicrosoft() {
     const provider = new OAuthProvider('microsoft.com');
 
     const auth = getAuth();
-    signInWithPopup(auth, provider)
+    await signInWithPopup(auth, provider)
       .then((result) => {
         const credential = OAuthProvider.credentialFromResult(result);
         const { accessToken } = credential;
