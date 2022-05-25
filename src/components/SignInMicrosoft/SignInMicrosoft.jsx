@@ -7,7 +7,17 @@ function SignInMicrosoft() {
   async function signInWithMicrosoft() {
     const provider = new OAuthProvider('microsoft.com');
 
-    await signInWithPopup(getAuth(), provider);
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = OAuthProvider.credentialFromResult(result);
+        const { accessToken } = credential;
+        const { idToken } = credential;
+      })
+
+      .catch((error) => {
+        alert(`"Something went wrong: ${error}`);
+      });
   }
 
   return (
