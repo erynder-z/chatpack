@@ -8,11 +8,11 @@
 }
 
 .messages {
-  min-height: 85vh;
-  max-height: 85vh;
+  min-height: 78vh;
+  max-height: 78vh;
   display: flex;
   flex-direction: column;
-  padding: 3rem 0;
+  padding: 10rem 0 3rem 0;
   overflow-y: auto;
 }
 
