@@ -1,0 +1,18 @@
+.signinBtnTwitter {
+  margin: 5px auto auto auto;
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--signin);
+  color: whitesmoke;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.signinBtnGithub:hover {
+  background-color: var(--signin-hover);
+}
