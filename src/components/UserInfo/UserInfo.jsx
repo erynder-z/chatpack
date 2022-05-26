@@ -1,9 +1,15 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './UserInfo.css';
 
 function UserInfo({ auth }) {
-  return auth.currentUser && <div className="userinfo">{auth.currentUser.email.split('@')[0]}</div>;
+  const [userInfo, setUserInfo] = useState('');
+
+  useEffect(() => {
+    setUserInfo(auth.currentUser.email.split('@')[0]);
+  }, []);
+
+  return <div className="userinfo">Welcome, {userInfo}</div>;
 }
 
 export default UserInfo;
