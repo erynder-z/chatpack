@@ -29,8 +29,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const auth = getAuth(app);
-
-/* connectAuthEmulator(auth, 'http://localhost:9099');
+/* 
+connectAuthEmulator(auth, 'http://localhost:9099');
 connectFirestoreEmulator(firestore, 'localhost', 8080); */
 
 function App() {
@@ -38,11 +38,11 @@ function App() {
 
   const userOnline = async () => {
     const { uid } = auth.currentUser;
-    const name = auth.currentUser.email.split('@')[0];
+    const { displayName } = auth.currentUser;
 
     await setDoc(doc(firestore, 'onlineUsers', uid), {
       uid,
-      name
+      displayName
     });
   };
 

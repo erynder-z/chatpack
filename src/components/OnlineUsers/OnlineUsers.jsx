@@ -29,7 +29,7 @@ function OnlineUsers({ firestore }) {
           onlineUsers.map((usr) => {
             return (
               <li key={onlineUsers.indexOf(usr).toString()} className="online-usr">
-                {usr.name}
+                {usr.displayName}
               </li>
             );
           })}

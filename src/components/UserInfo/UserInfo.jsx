@@ -6,7 +6,7 @@ function UserInfo({ auth }) {
   const [userInfo, setUserInfo] = useState('');
 
   useEffect(() => {
-    setUserInfo(auth.currentUser.email.split('@')[0]);
+    setUserInfo(auth.currentUser.displayName);
   }, []);
 
   return <div className="userinfo">Welcome, {userInfo}</div>;
