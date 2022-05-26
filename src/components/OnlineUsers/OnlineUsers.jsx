@@ -37,6 +37,7 @@ function OnlineUsers({ firestore }) {
       <button className="online-users-toggle" onClick={toggle} type="button">
         <BsArrowBarDown size="1rem" color="whitesmoke" />
       </button>
+      {showOnline && <div className="bar" />}
     </div>
   );
 }

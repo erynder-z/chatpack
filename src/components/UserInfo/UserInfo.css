@@ -1,14 +1,21 @@
 .userinfo {
-  padding: 0 1rem;
-  height: auto;
-  max-width: 33%;
-  word-wrap: break-word;
-  margin: auto;
+  background-color: var(--header);
+  height: 2vh;
+  max-width: 40vw;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 @media all and (max-width: 768px) {
   .userinfo {
-    padding: 0;
-    font-size: 1rem;
+    max-width: 100%;
   }
 }

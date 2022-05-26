@@ -21,6 +21,18 @@
   transform: translateY(13vh);
 }
 
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: whitesmoke;
+  animation: timerBar calc(5 * 1s) linear forwards;
+  -webkit-animation: timerBar calc(5 * 1s) linear forwards;
+  -moz-animation: timerBar calc(5 * 1s) linear forwards;
+  -o-animation: timerBar calc(5 * 1s) linear forwards;
+  -ms-animation: timerBar calc(5 * 1s) linear forwards;
+  transform-origin: left center;
+}
+
 .online-users.active li {
   animation: fadeIn ease 0.5s;
   -webkit-animation: fadeIn ease 0.5s;
@@ -71,6 +83,36 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes timerBar {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@-moz-keyframes timerBar {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@-webkit-keyframes timerBar {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@-o-keyframes timerBar {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@-ms-keyframes timerBar {
+  to {
+    transform: scaleX(0);
   }
 }
 
