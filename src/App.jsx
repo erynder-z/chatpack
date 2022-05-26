@@ -66,6 +66,9 @@ function App() {
             <SignInGithub />
             <SignInTwitter />
             <SignInMicrosoft />
+            <footer className="about">
+              created by Erynder-Z || <a href="https://github.com/erynder-z">My GitHub</a>
+            </footer>
           </>
         )}
       </section>
