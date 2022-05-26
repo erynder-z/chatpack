@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/chatpack/static/css/main.b8b1c60b.css",
-    "main.js": "/chatpack/static/js/main.c03e0440.js",
+    "main.css": "/chatpack/static/css/main.e33898b7.css",
+    "main.js": "/chatpack/static/js/main.33fdb19b.js",
     "static/media/placeholder.png": "/chatpack/static/media/placeholder.144d1b6997ec2ec70158.png",
     "index.html": "/chatpack/index.html",
-    "main.b8b1c60b.css.map": "/chatpack/static/css/main.b8b1c60b.css.map",
-    "main.c03e0440.js.map": "/chatpack/static/js/main.c03e0440.js.map"
+    "main.e33898b7.css.map": "/chatpack/static/css/main.e33898b7.css.map",
+    "main.33fdb19b.js.map": "/chatpack/static/js/main.33fdb19b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8b1c60b.css",
-    "static/js/main.c03e0440.js"
+    "static/css/main.e33898b7.css",
+    "static/js/main.33fdb19b.js"
   ]
 }
