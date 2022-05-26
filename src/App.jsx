@@ -10,6 +10,7 @@ import OnlineUsers from './components/OnlineUsers/OnlineUsers';
 import SignInGithub from './components/SignIn Github/SignInGithub';
 import SignInTwitter from './components/SignInTwitter/SignInTwitter';
 import SignInMicrosoft from './components/SignInMicrosoft/SignInMicrosoft';
+import UserInfo from './components/UserInfo/UserInfo';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB5TIKYS0o_XURgZf8ot_BgQ8SPtBNTE9A',
@@ -53,6 +54,7 @@ function App() {
     <div className="App">
       <header>
         <Nav auth={auth} firestore={firestore} />
+        {user && <UserInfo auth={auth} firestore={firestore} />}
         {user && <OnlineUsers firestore={firestore} />}
       </header>
       <section>
