@@ -22,7 +22,7 @@ function SignInMicrosoft() {
   }
 
   return (
-    <button className="signinBtnTwitter" onClick={signInWithMicrosoft} type="button">
+    <button className="signinBtnMicrosoft" onClick={signInWithMicrosoft} type="button">
       <div className="signin-container">
         <div className="signin-text">Sign in with Microsoft</div>
         <div className="divider" />

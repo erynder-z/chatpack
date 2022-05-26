@@ -10,7 +10,7 @@
   font-size: 1.5rem;
   border: none;
   cursor: pointer;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .signinBtnMicrosoft:hover {
