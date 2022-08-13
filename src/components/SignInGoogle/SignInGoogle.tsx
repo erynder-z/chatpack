@@ -1,9 +1,9 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import React from 'react';
+import React, { FC } from 'react';
 import { AiOutlineGoogle } from 'react-icons/ai';
 import './SignInGoogle.css';
 
-function SignInGoogle() {
+const SignInGoogle: FC = () => {
   async function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(getAuth(), provider);
@@ -17,6 +17,6 @@ function SignInGoogle() {
       </div>
     </button>
   );
-}
+};
 
 export default SignInGoogle;

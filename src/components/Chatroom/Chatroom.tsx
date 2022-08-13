@@ -1,29 +1,42 @@
-/* eslint-disable react/prop-types */
-import { addDoc, collection, orderBy, query, limit, serverTimestamp } from 'firebase/firestore';
-import React, { useEffect, useRef, useState } from 'react';
+import { Auth } from 'firebase/auth';
+import {
+  addDoc,
+  collection,
+  orderBy,
+  query,
+  limit,
+  serverTimestamp,
+  Firestore
+} from 'firebase/firestore';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { MdSend } from 'react-icons/md';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import './Chatroom.css';
 
-function Chatroom({ auth, firestore }) {
-  const dummy = useRef();
+interface Props {
+  auth: Auth;
+  firestore: Firestore;
+}
+
+const Chatroom: FC<Props> = ({ auth, firestore }) => {
+  const dummy = useRef<HTMLSpanElement>(null);
   const messagesRef = collection(firestore, 'messages');
   const q = query(messagesRef, orderBy('timestamp'), limit(25));
 
-  const [messages] = useCollectionData(q, { idField: 'id' });
+  const [messages] = useCollectionData(q);
   const [formValue, setFormValue] = useState('');
 
   const scrollToBottom = () => {
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+    dummy?.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const sendMessage = async (e) => {
+  const sendMessage = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    if (formValue !== '') {
+    if (formValue !== '' && auth.currentUser) {
       const { uid, photoURL } = auth.currentUser;
 
-      /* const docRef =  */ await addDoc(collection(firestore, 'messages'), {
+      await addDoc(collection(firestore, 'messages'), {
         text: formValue,
         timestamp: serverTimestamp(),
         uid,
@@ -37,8 +50,8 @@ function Chatroom({ auth, firestore }) {
 
   // avoid smartphone keybaords from changing the viewport
   useEffect(() => {
-    const viewport = document.querySelector('meta[name=viewport]');
-    viewport.setAttribute('content', `${viewport.content}, height=${window.innerHeight}`);
+    const viewport = document.querySelector('meta[name=viewport]') as HTMLMetaElement;
+    viewport?.setAttribute('content', `${viewport.content}, height=${window.innerHeight}`);
   }, []);
 
   return (
@@ -66,6 +79,6 @@ function Chatroom({ auth, firestore }) {
       </form>
     </div>
   );
-}
+};
 
 export default Chatroom;

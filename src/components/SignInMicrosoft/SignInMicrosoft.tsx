@@ -1,21 +1,17 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { FC } from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
 import { BsMicrosoft } from 'react-icons/bs';
 import './SignInMicrosoft.css';
 
-function SignInMicrosoft() {
+const SignInMicrosoft: FC = () => {
   async function signInWithMicrosoft() {
     const provider = new OAuthProvider('microsoft.com');
 
     const auth = getAuth();
     await signInWithPopup(auth, provider)
       .then((result) => {
-        const credential = OAuthProvider.credentialFromResult(result);
-        const { accessToken } = credential;
-        const { idToken } = credential;
+        OAuthProvider.credentialFromResult(result);
       })
-
       .catch((error) => {
         alert(`"Something went wrong: ${error}`);
       });
@@ -30,6 +26,6 @@ function SignInMicrosoft() {
       </div>
     </button>
   );
-}
+};
 
 export default SignInMicrosoft;

@@ -1,12 +1,18 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { FC } from 'react';
 import { fromUnixTime, format } from 'date-fns';
 import './ChatMessage.css';
 import placeholder from '../../assets/placeholder.png';
+import { Auth } from 'firebase/auth';
+import { DocumentData } from 'firebase/firestore';
 
-function ChatMessage({ auth, message }) {
+interface Props {
+  auth: Auth;
+  message: DocumentData;
+}
+
+const ChatMessage: FC<Props> = ({ auth, message }) => {
   const { text, uid, photoURL, timestamp } = message;
-  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+  const messageClass = uid === auth?.currentUser?.uid ? 'sent' : 'received';
 
   return (
     <div className={`message ${messageClass}`}>
@@ -26,6 +32,6 @@ function ChatMessage({ auth, message }) {
       </div>
     </div>
   );
-}
+};
 
 export default ChatMessage;

@@ -1,29 +1,19 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { FC } from 'react';
 import { getAuth, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 import { AiOutlineGithub } from 'react-icons/ai';
 import './SignInGithub.css';
 
-function SignInGithub() {
+const SignInGithub: FC = () => {
   async function signInWithGithub() {
     const provider = new GithubAuthProvider();
 
     const auth = getAuth();
     await signInWithPopup(auth, provider)
       .then((result) => {
-        const credential = GithubAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-
-        const { user } = result;
+        GithubAuthProvider.credentialFromResult(result);
       })
       .catch((error) => {
         alert(`Something went wrong: ${error.message}`);
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        const { email } = error.customData;
-
-        const credential = GithubAuthProvider.credentialFromError(error);
       });
   }
 
@@ -36,6 +26,6 @@ function SignInGithub() {
       </div>
     </button>
   );
-}
+};
 
 export default SignInGithub;

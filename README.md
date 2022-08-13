@@ -2,7 +2,7 @@
 
 #### [LIVE]: https://erynder-z.github.io/chatpack/
 
-A simple full-stack chat application build with react and google firebase backend.
+A simple full-stack chat application build with TypeScript, React and Google Firebase backend.
 
 # Features
 
@@ -13,6 +13,7 @@ A simple full-stack chat application build with react and google firebase backen
 # This app uses the following:
 
 - [React] (https://reactjs.org/)
+- [TypeScript] (https://www.typescriptlang.org/)
 - [Google_Firebase] (https://firebase.google.com/)
 - [React-Icons] (https://react-icons.github.io/)
 - [date-fns_library] (https://date-fns.org/)

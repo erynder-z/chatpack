@@ -21,7 +21,7 @@
   transform: translateY(13vh);
 }
 
-.bar {
+/* .bar {
   height: 3px;
   width: 100%;
   background-color: whitesmoke;
@@ -31,7 +31,7 @@
   -o-animation: timerBar calc(5 * 1s) linear forwards;
   -ms-animation: timerBar calc(5 * 1s) linear forwards;
   transform-origin: left center;
-}
+} */
 
 .online-users.active li {
   animation: fadeIn ease 0.5s;
@@ -138,6 +138,10 @@
   outline: none;
   border: none;
   background-color: var(--header);
+}
+
+.expanded {
+  transform: rotate(180deg);
 }
 
 @media all and (max-width: 768px) {
