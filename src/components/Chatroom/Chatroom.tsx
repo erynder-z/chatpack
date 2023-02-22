@@ -22,7 +22,7 @@ interface Props {
 const Chatroom: FC<Props> = ({ auth, firestore }) => {
   const dummy = useRef<HTMLSpanElement>(null);
   const messagesRef = collection(firestore, 'messages');
-  const q = query(messagesRef, orderBy('timestamp'), limit(25));
+  const q = query(messagesRef, orderBy('timestamp', 'desc'), limit(25));
 
   const [messages] = useCollectionData(q);
   const [formValue, setFormValue] = useState('');
@@ -58,9 +58,11 @@ const Chatroom: FC<Props> = ({ auth, firestore }) => {
     <div className="chatroom">
       <div className="messages">
         {messages &&
-          messages.map((msg) => (
-            <ChatMessage key={messages.indexOf(msg).toString()} message={msg} auth={auth} />
-          ))}
+          messages
+            .reverse()
+            .map((msg) => (
+              <ChatMessage key={messages.indexOf(msg).toString()} message={msg} auth={auth} />
+            ))}
         <span ref={dummy} />
       </div>
 
