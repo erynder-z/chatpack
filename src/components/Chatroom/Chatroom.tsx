@@ -25,6 +25,7 @@ const Chatroom: FC<Props> = ({ auth, firestore }) => {
   const q = query(messagesRef, orderBy('timestamp', 'desc'), limit(25));
 
   const [messages] = useCollectionData(q);
+
   const [formValue, setFormValue] = useState('');
 
   const scrollToBottom = () => {
@@ -59,10 +60,9 @@ const Chatroom: FC<Props> = ({ auth, firestore }) => {
       <div className="messages">
         {messages &&
           messages
+            .slice()
             .reverse()
-            .map((msg) => (
-              <ChatMessage key={messages.indexOf(msg).toString()} message={msg} auth={auth} />
-            ))}
+            .map((msg) => <ChatMessage key={msg.timestamp} message={msg} auth={auth} />)}
         <span ref={dummy} />
       </div>
 
